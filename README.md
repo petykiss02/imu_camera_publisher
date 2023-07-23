@@ -28,7 +28,7 @@ git clone https://github.com/petykiss02/imu_camera_publisher.git
 4.  **From the root of your workspace  build the package using colcon:**  
 ```shell
 cd ~/ros2_ws
-colcon build
+colcon build --packages-select imu_camera_publisher
 ```
 
 5. **Run the sensor data publisher:**
