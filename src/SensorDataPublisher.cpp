@@ -36,10 +36,8 @@ void SensorDataPublisher::imuTimerCallback()
         imu_msg->orientation.y = imuSensorDataVec_[index].orientationNedPitch;
         imu_msg->orientation.z = imuSensorDataVec_[index].orientationNedYaw;
 
-        // Fill in other fields of the Imu message as needed
 
         RCLCPP_INFO(this->get_logger(), "IMU Data:");
-        RCLCPP_INFO(this->get_logger(), "  Frame ID: %s", imu_msg->header.frame_id.c_str());
         RCLCPP_INFO(this->get_logger(), "  Linear Acceleration: (%f, %f, %f)",
                     imu_msg->linear_acceleration.x, imu_msg->linear_acceleration.y, imu_msg->linear_acceleration.z);
         RCLCPP_INFO(this->get_logger(), "  Angular Velocity: (%f, %f, %f)",
@@ -60,7 +58,6 @@ void SensorDataPublisher::cameraTimerCallback()
         size_t index = cameraCount_ % imageSensorDataVec_.size(); // Loop back when data is exhausted
         auto image_msg = std::make_unique<sensor_msgs::msg::Image>();
 
-        // Fill in the Image message with appropriate data
         image_msg->header.stamp = this->now();
         image_msg->header.frame_id = "base_link";
 
@@ -70,10 +67,8 @@ void SensorDataPublisher::cameraTimerCallback()
         image_msg->step = imageSensorDataVec_[index].width * 4; // 4 channels (RGBA8)
         image_msg->data = imageSensorDataVec_[index].pixels;
 
-        // Fill in other fields of the Image message as needed
 
         RCLCPP_INFO(this->get_logger(), "Camera Image Data:");
-        RCLCPP_INFO(this->get_logger(), "  Frame ID: %s", image_msg->header.frame_id.c_str());
         RCLCPP_INFO(this->get_logger(), "  Width: %d, Height: %d", image_msg->width, image_msg->height);
         RCLCPP_INFO(this->get_logger(), "  Encoding: %s", image_msg->encoding.c_str());
 

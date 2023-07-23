@@ -20,12 +20,14 @@ find_package(sensor_msgs REQUIRED)
 set(HEADER_FILES
     include/ImuSensorDataReader.hpp
     include/CameraSensorDataReader.hpp
+    include/VehicleSensorDataReader.hpp
     include/SensorDataPublisher.hpp
 )
 
 set(SOURCE_FILES
     src/ImuSensorDataReader.cpp
     src/CameraSensorDataReader.cpp
+    src/VehicleSensorDataReader.cpp
     src/SensorDataPublisher.cpp
     src/main.cpp
 )
