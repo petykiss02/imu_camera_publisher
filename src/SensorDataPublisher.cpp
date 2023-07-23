@@ -63,7 +63,7 @@ void SensorDataPublisher::cameraTimerCallback()
 
         image_msg->height = imageSensorDataVec_[index].height;
         image_msg->width = imageSensorDataVec_[index].width;
-        image_msg->encoding = "rgba8"; // Assuming RGBA8 format
+        image_msg->encoding = "rgba8";
         image_msg->step = imageSensorDataVec_[index].width * 4; // 4 channels (RGBA8)
         image_msg->data = imageSensorDataVec_[index].pixels;
 
