@@ -37,7 +37,7 @@ colcon build --packages-select imu_camera_publisher
 ros2 run imu_camera_publisher sensor_data_publisher
 ```
   
-Place the `ego_export` directory in your ROS2 workspace directory. The sensor data publisher will read IMU sensor data from the `ego_export/imu_sensor` directory and camera sensor data from the `ego_export/pinhole/color` directory. Ensure that you have valid sensor data files in these directories before running the publisher. This directory should contain the IMU sensor data in JSON format and camera sensor data in TGA image format.
+Place the `ego_export` directory in your ROS2 workspace directory. The sensor data publisher will read IMU sensor data from the `ego_export/imu_sensor` directory, camera sensor data from the `ego_export/pinhole/color` directory, and vehicle sensor data from the `ego_export/vehicle_sensor` directory within your workspace. Ensure that you have valid sensor data files in these directories before running the publisher. This directory should contain the IMU sensor data and vehicle sensor data in JSON format and camera sensor data in TGA image format.
 
 ## Data Format
 ### IMU Sensor Data
@@ -51,4 +51,6 @@ The IMU sensor data is expected to be in JSON format, with the following fields:
 
 ### Camera Sensor Data
 The camera sensor data is expected to be in TGA image format (RGBA8). The publisher will load the TGA image files and publish them as ROS2 `sensor_msgs/Image` messages.
-	
+
+## Visualization
+After running the sensor data publisher, I used Foxglove Studio to visualize the sensor data.
