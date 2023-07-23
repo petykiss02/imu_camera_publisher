@@ -3,9 +3,9 @@
 This project is a ROS2-based sensor data publisher that reads IMU sensor data from JSON files and camera sensor data from image files and publishes them using ROS2 messages. The data is published to the topics imu `(sensor_msgs/Imu)` and camera_image `(sensor_msgs/Image)`.
 ## Dependencies
 
--  ROS2 (Iron Irwini)
--   [stb image loader](https://github.com/nothings/stb/tree/master) library
--   [nlohmann/json](https://github.com/nlohmann/json) library
+- ROS2 (Iron Irwini)
+- [stb image loader](https://github.com/nothings/stb/tree/master) library (included in the repository as "json.hpp")
+- [nlohmann/json](https://github.com/nlohmann/json) library (included in the repository as "stb_image.h")
 
 ## Usage
 
